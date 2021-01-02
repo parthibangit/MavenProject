@@ -4,4 +4,61 @@
   <artifactId>com.mavenproject.test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Maven Project</name>
+  
+ <properties>
+ <suiteXmlFiles>/com.mavenproject.test/src/test/resources/testng.xml</suiteXmlFiles>
+ <skipTests>false</skipTests>
+ </properties>
+  
+   
+  <dependencies>
+  
+       <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+		    <groupId>org.testng</groupId>
+		    <artifactId>testng</artifactId>
+		    <version>7.3.0</version>
+		    <scope>test</scope>
+		</dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+		    <groupId>com.aventstack</groupId>
+		    <artifactId>extentreports</artifactId>
+		    <version>5.0.6</version>
+		</dependency>
+        
+        
+  
+  </dependencies>
+  
+  <build>
+  
+  <plugins>
+  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+   </plugin>
+   
+   <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <configuration>
+            <suiteXmlfiles>
+            <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>        
+            </suiteXmlfiles>
+        </configuration>
+        
+   </plugin>     
+  </plugins>
+  
+  </build>
+  
+  
 </project>
