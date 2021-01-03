@@ -33,9 +33,11 @@ public class ConfigJenkin {
 	public void seleniumNewTab() throws Exception {		
         driver.switchTo().newWindow(WindowType.TAB);
         driver.switchTo().newWindow(WindowType.WINDOW);
+        System.out.println("New features Tested");
+        
 	}
 	
-	@Test
+	//@Test
 	public void seleniumLocators(){
 		WebElement element = driver.findElement(RelativeLocator.withTagName("h3").above(By.xpath("//form")));
 		System.out.println(element.getText());
@@ -48,7 +50,7 @@ public class ConfigJenkin {
 	
 	}
 	
-	@Test
+	//@Test
 	public void seleniumScreenshot() throws IOException {
 		WebElement element = driver.findElement(By.xpath("//h1[text()='Welcome to the-internet']"));
 		File srcFile = element.getScreenshotAs(OutputType.FILE);
